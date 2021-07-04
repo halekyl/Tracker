@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import Header from './components/Header'
 import Tasks from './components/Tasks'
+import AddTask from './components/AddTask'
 
 const App = () => {
+  const [showAddTask, setShowAddTask] = useState(false)
   const [tasks, setTasks] = useState([
     {
         id: 1,
@@ -23,6 +25,18 @@ const App = () => {
         reminder: false, 
     }
 ])
+
+/* Add Task 
+* Takes in task info: text, day and reminder state
+* Show task ids that do not match the deleted task id
+* Actaul button located in Task.js 
+*/
+const addTask = (task) => {
+  const id = Math.floor(Math.random() * 1000 + 1)
+  const newTask = { id, ...task }
+  setTasks([...tasks, newTask])
+}
+
 
 /* Delete Task 
 * Takes in: task id 
@@ -45,10 +59,10 @@ const toggleReminder = (id) => {
 
 }
 
-
   return (
     <div className='container'>
-      <Header />
+      <Header onAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask}/>
+      {showAddTask && <AddTask onAdd={addTask} />}
       {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} /> : 
       ('No Tasks To Show')}
     </div>

@@ -1,9 +1,13 @@
 # Task Tracker 
 
+### Using React to make dynamic interface without reloading pages. 
+
 run in terminal - check for version 
 ### `npm -- version`
 
 ### `npm i react-icons`
+
+### `rafce` to create components 
 
 ### `npx create-react-app react-task-tracker`
 
