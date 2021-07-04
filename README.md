@@ -3,6 +3,8 @@
 run in terminal - check for version 
 ### `npm -- version`
 
+### `npm i react-icons`
+
 ### `npx create-react-app react-task-tracker`
 
 ## Available Scripts
