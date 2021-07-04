@@ -31,5 +31,6 @@ Locally serve on specified port (local 3000 is dev server)
 
 ### `npm i json-server` & `npm run server`
 
-For server: 
+For Routes: 
+### `npm i react-router-dom`
 
